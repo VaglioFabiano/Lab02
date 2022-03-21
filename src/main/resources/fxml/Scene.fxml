@@ -1,15 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.alien.FXMLController">
    <top>
-      <Label text="Alien Translator" BorderPane.alignment="CENTER">
+      <Label text="Laib 2 Alien Translator" textFill="#f70505" BorderPane.alignment="CENTER">
          <font>
-            <Font name="Courier New Bold" size="39.0" />
+            <Font name="Arial Bold" size="39.0" />
          </font>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
       </Label>
    </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.20001220703125" minWidth="10.0" prefWidth="52.60002899169922" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.9999633789063" minWidth="10.0" prefWidth="290.3999877929688" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.4000244140625" minWidth="10.0" prefWidth="123.20001220703125" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="txtinsert" promptText="Insert text" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Button fx:id="btnTranslate" mnemonicParsing="false" onAction="#handleTranslate" text="Translate" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label text="Alien Text">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+            <TextArea fx:id="txtArea" promptText="Welcome to Alien dictionary v2022...">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextArea>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="222.20001220703125" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.39996337890625" minWidth="10.0" prefWidth="111.79998779296875" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btnCleartext" mnemonicParsing="false" onAction="#handleclear" text="Clear Text" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
